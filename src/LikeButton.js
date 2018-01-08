@@ -10,7 +10,7 @@ class LikeButton extends Component {
   getLikeCount() {
     if (this.props.likes > 0) {
       return (
-        <span>
+        <span className="like-count">
           {this.props.likes}
         </span>
       );

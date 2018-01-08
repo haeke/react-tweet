@@ -30,8 +30,8 @@ class Tweet extends Component {
           <Message message={skywalkerTweet.message}/>
           <div className="buttons">
             <ReplyButton />
-            <RetweetButton />
-            <LikeButton />
+            <RetweetButton retweets={skywalkerTweet.retweets} />
+            <LikeButton likes={skywalkerTweet.likes} />
             <MoreOptionsButton />
           </div>
         </div>

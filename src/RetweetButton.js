@@ -22,8 +22,9 @@ class RetweetButton extends Component {
   render() {
     return (
       <span>
-        <i className="fa fa-retweet retweet-button" />
-        {this.getRetweetCount()}
+        <i className="fa fa-retweet">
+          {this.getRetweetCount()}
+        </i>
       </span>
     );
   }

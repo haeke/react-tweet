@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class Time extends Component {
   render() {
-    const { currentTime } = this.props;
+    const currentTime = moment(this.props.currentTime).fromNow();
     return (
       <span className="time">{currentTime}</span>
     );

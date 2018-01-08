@@ -26,7 +26,7 @@ class Tweet extends Component {
         <Avatar />
         <div className="content">
           <NameWithHandle name={skywalkerTweet.author.name} handle={skywalkerTweet.author.handle}/>
-          <Time currentTime='3 hrs ago' />
+          <Time currentTime={skywalkerTweet.timestamp} />
           <Message message={skywalkerTweet.message}/>
           <div className="buttons">
             <ReplyButton />

@@ -15,8 +15,8 @@ class Tweet extends Component {
         <Avatar />
         <div className="content">
           <NameWithHandle name='Luke Sykwalker' handle='@lukeskywalker'/>
-          <Time />
-          <Message />
+          <Time currentTime='3 hrs ago' />
+          <Message message='Echo Three to Echo Seve, @Han, old buddy, do you read me?'/>
           <div className="buttons">
             <ReplyButton />
             <RetweetButton />

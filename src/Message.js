@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class Message extends Component {
   render() {
+    const { message } = this.props;
     return (
       <div className="message">
-        This is less than 140 characters.
+        {message}
       </div>
     );
   }

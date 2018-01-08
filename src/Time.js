@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class Time extends Component {
   render() {
+    const { currentTime } = this.props;
     return (
-      <span className="time">3h ago</span>
+      <span className="time">{currentTime}</span>
     );
   }
 }

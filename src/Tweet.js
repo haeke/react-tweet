@@ -7,6 +7,7 @@ import ReplyButton from './ReplyButton';
 import RetweetButton from './RetweetButton';
 import LikeButton from './LikeButton';
 import MoreOptionsButton from './MoreOptionsButton';
+import Comments from './Comments';
 
 class Tweet extends Component {
   render() {
@@ -22,18 +23,27 @@ class Tweet extends Component {
     };
 
     return (
-      <div className="tweet">
-        <Avatar />
-        <div className="content">
-          <NameWithHandle name={skywalkerTweet.author.name} handle={skywalkerTweet.author.handle}/>
-          <Time currentTime={skywalkerTweet.timestamp} />
-          <Message message={skywalkerTweet.message}/>
-          <div className="buttons">
-            <ReplyButton />
-            <RetweetButton retweets={skywalkerTweet.retweets} />
-            <LikeButton likes={skywalkerTweet.likes} />
-            <MoreOptionsButton />
+      <div>
+        <div className="tweet">
+          <Avatar />
+          <div className="content">
+            <NameWithHandle name={skywalkerTweet.author.name} handle={skywalkerTweet.author.handle}/>
+            <Time currentTime={skywalkerTweet.timestamp} />
+            <Message message={skywalkerTweet.message}/>
+            <div className="buttons">
+              <ReplyButton />
+              <RetweetButton retweets={skywalkerTweet.retweets} />
+              <LikeButton likes={skywalkerTweet.likes} />
+              <MoreOptionsButton />
+            </div>
           </div>
+        </div>
+        <div>
+          <Comments
+            handle={skywalkerTweet.author.handle}
+            comment={skywalkerTweet.message}
+            likes={skywalkerTweet.message}
+            />
         </div>
       </div>
     );

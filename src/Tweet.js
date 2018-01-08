@@ -10,13 +10,24 @@ import MoreOptionsButton from './MoreOptionsButton';
 
 class Tweet extends Component {
   render() {
+    var skywalkerTweet = {
+      message: 'Echo Three to Echo Seve, @Han, old buddy, do you read me?',
+      author: {
+        name: 'Luke Skylwalker',
+        handle: '@lukeskywalker',
+      },
+      likes: 3,
+      retweets: 0,
+      timestamp: '2017-11-20 21:24:37',
+    };
+
     return (
       <div className="tweet">
         <Avatar />
         <div className="content">
-          <NameWithHandle name='Luke Sykwalker' handle='@lukeskywalker'/>
+          <NameWithHandle name={skywalkerTweet.author.name} handle={skywalkerTweet.author.handle}/>
           <Time currentTime='3 hrs ago' />
-          <Message message='Echo Three to Echo Seve, @Han, old buddy, do you read me?'/>
+          <Message message={skywalkerTweet.message}/>
           <div className="buttons">
             <ReplyButton />
             <RetweetButton />

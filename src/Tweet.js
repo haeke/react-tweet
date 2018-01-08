@@ -17,7 +17,7 @@ class Tweet extends Component {
         handle: '@lukeskywalker',
       },
       likes: 3,
-      retweets: 0,
+      retweets: 42,
       timestamp: '2017-11-20 21:24:37',
     };
 

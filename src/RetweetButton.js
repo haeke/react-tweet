@@ -7,11 +7,11 @@ class RetweetButton extends Component {
     this.getRetweetCount = this.getRetweetCount.bind(this);
   }
 
-  getRetweetCount(count) {
-    if (count > 0) {
+  getRetweetCount() {
+    if (this.props.retweets > 0) {
       return (
         <span>
-          {count}
+          {this.props.retweets}
         </span>
       );
     } else {
@@ -20,11 +20,10 @@ class RetweetButton extends Component {
   }
 
   render() {
-    const { count } = this.props.retweets;
     return (
       <span>
         <i className="fa fa-retweet retweet-button" />
-        {this.getRetweetCount(count)}
+        {this.getRetweetCount()}
       </span>
     );
   }

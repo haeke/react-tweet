@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 class Time extends Component {
@@ -9,5 +10,10 @@ class Time extends Component {
     );
   }
 }
+
+//make sure that the currentTime variable is a number
+Time.propTypes = {
+  currentTime: PropTypes.string,
+};
 
 export default Time;

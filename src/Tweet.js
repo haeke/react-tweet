@@ -42,7 +42,7 @@ class Tweet extends Component {
           <Comments
             handle={skywalkerTweet.author.handle}
             comment={skywalkerTweet.message}
-            likes={skywalkerTweet.message}
+            likes={skywalkerTweet.likes}
             />
         </div>
       </div>

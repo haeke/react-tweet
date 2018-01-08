@@ -21,7 +21,7 @@ class Comments extends Component {
 Comments.propTypes = {
   handle: PropTypes.string.isRequired,
   comment: PropTypes.string.isRequired,
-  likes: PropTypes.number,
+  likes: PropTypes.number.isRequired,
 };
 
 export default Comments;

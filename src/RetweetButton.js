@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class RetweetButton extends Component {
   constructor(props) {
@@ -7,11 +8,11 @@ class RetweetButton extends Component {
     this.getRetweetCount = this.getRetweetCount.bind(this);
   }
 
-  getRetweetCount() {
-    if (this.props.retweets > 0) {
+  getRetweetCount(retweets) {
+    if (retweets > 0) {
       return (
         <span className='retweet-count'>
-          {this.props.retweets}
+          {retweets}
         </span>
       );
     } else {
@@ -20,14 +21,19 @@ class RetweetButton extends Component {
   }
 
   render() {
+    const { retweets } = this.props;
     return (
       <span>
         <i className="fa fa-retweet retweet-button">
-          {this.getRetweetCount()}
+          {this.getRetweetCount(retweets)}
         </i>
       </span>
     );
   }
 }
+
+RetweetButton.propTypes = {
+  retweets: PropTypes.number,
+};
 
 export default RetweetButton;

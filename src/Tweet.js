@@ -14,7 +14,7 @@ class Tweet extends Component {
       <div className="tweet">
         <Avatar />
         <div className="content">
-          <NameWithHandle />
+          <NameWithHandle name='Luke Sykwalker' handle='@lukeskywalker'/>
           <Time />
           <Message />
           <div className="buttons">

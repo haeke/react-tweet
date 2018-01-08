@@ -4,8 +4,8 @@ class NameWithHandle extends Component {
   render() {
     return (
       <span className="name-with-handle">
-        <span className="name">Luke Skywalker</span>
-        <span className="handle">@lukeskywalker</span>
+        <span className="name">{this.props.name}</span>
+        <span className="handle">{this.props.handle}</span>
       </span>
     );
   }

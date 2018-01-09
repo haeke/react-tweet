@@ -5,7 +5,7 @@ class Avatar extends Component {
     return (
       <div>
         <img
-          src="http://facetheforce.today/luke/400"
+          src={this.props.avatar}
           className="avatar"
           alt="avatar" />
       </div>

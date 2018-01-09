@@ -7,49 +7,41 @@ import ReplyButton from './ReplyButton';
 import RetweetButton from './RetweetButton';
 import LikeButton from './LikeButton';
 import MoreOptionsButton from './MoreOptionsButton';
-import Comments from './Comments';
 import PropTypes from 'prop-types';
 
 class Tweet extends Component {
   render() {
-    const { author, timestamp, message, retweets, likes } = this.props.skywalkerTweet;
-    return (
-      <div>
-        <div className="tweet">
-          <Avatar />
-          <div className="content">
-            <NameWithHandle name={author.name} handle={author.handle}/>
-            <Time currentTime={timestamp} />
-            <Message message={message}/>
-            <div className="buttons">
-              <ReplyButton />
-              <RetweetButton retweets={retweets} />
-              <LikeButton likes={likes} />
-              <MoreOptionsButton />
+    const { swTweets } = this.props;
+    const tweets = swTweets.map(tweet => {
+      return (
+        <div key={tweet.id}>
+          <div className="tweet">
+            <Avatar avatar={tweet.author.photo} />
+            <div className="content">
+              <NameWithHandle name={tweet.author.name} handle={tweet.author.handle}/>
+              <Time currentTime={tweet.timestamp} />
+              <Message message={tweet.message}/>
+              <div className="buttons">
+                <ReplyButton />
+                <RetweetButton retweets={tweet.retweets} />
+                <LikeButton likes={tweet.likes} />
+                <MoreOptionsButton />
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <Comments
-            handle={author.handle}
-            comment={message}
-            likes={likes}
-            />
-        </div>
+      );
+    });
+    return (
+      <div>
+        {tweets}
       </div>
     );
   }
 }
 
 Tweet.propTypes = {
-  skywalkerTweet: PropTypes.shape({
-    author: PropTypes.shape({
-      handle: PropTypes.string,
-      name: PropTypes.string,
-    }),
-    message: PropTypes.string,
-    likes: PropTypes.number,
-  }).isRequired,
+  swTweets: PropTypes.array,
 };
 
 export default Tweet;

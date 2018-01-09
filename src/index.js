@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Tweet from './Tweet';
-import skywalkerTweet from './data';
+import swTweets from './data';
 
-ReactDOM.render(<Tweet skywalkerTweet={skywalkerTweet}/>, document.querySelector('#root'));
+ReactDOM.render(<Tweet swTweets={swTweets}/>, document.querySelector('#root'));
